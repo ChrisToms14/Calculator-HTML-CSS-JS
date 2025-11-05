@@ -15,8 +15,8 @@ body {
 
 .calculator {
     background-color: #2a2a2a;
-    padding: 24px;
-    border-radius: 12px;
+    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     width: 320px;
 }
@@ -27,7 +27,7 @@ body {
     font-size: 42px;
     padding: 20px;
     text-align: right;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 20px;
     min-height: 80px;
     display: flex;
@@ -40,6 +40,7 @@ body {
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 12px;
 }
 
@@ -47,11 +48,11 @@ button {
     background-color: #404040;
     color: #fff;
     border: none;
-    padding: 24px;
+    padding: 20px;
     font-size: 24px;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
     font-weight: 500;
 }
 
@@ -61,6 +62,7 @@ button:hover {
 
 button:active {
     background-color: #606060;
+    transform: scale(0.96);
 }
 
 .operator {
@@ -90,4 +92,25 @@ button:active {
 
 .zero {
     grid-column: span 2;
+}
+
+
+button, .display {
+    width: 100%;
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        width: 90%;
+    }
+
+    button {
+        padding: 18px;
+        font-size: 20px;
+    }
+
+    .display {
+        font-size: 32px;
+        padding: 16px;
+    }
 }
